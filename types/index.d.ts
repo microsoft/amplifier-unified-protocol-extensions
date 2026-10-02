@@ -1,7 +1,7 @@
 /** Upstream SDKs own AHP and ACP types. These interfaces own only extensions. */
 export interface CapabilityManifest {
   version: 1;
-  topics: Record<string, {uri:string;version:1;watch?:boolean}>;
+  topics: Record<string, {uri:string;version:1;watch?:boolean;scope?:'context'|'host'}>;
   actions: Record<string, {topic:string;operation:string;method:'x-amplifier/capabilityAction'}>;
 }
 export interface CapabilityRecord<T extends object = Record<string,unknown>> {

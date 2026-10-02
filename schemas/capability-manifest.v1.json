@@ -21,6 +21,14 @@
           },
           "watch": {
             "type": "boolean"
+          },
+          "scope": {
+            "enum": [
+              "context",
+              "host"
+            ],
+            "default": "context",
+            "description": "Host topics always use scope=host and action channel ahp-root://; context topics use the selected authorized scope."
           }
         },
         "required": [

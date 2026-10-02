@@ -19,3 +19,8 @@ test('registry references published schema owners and no upstream type copies',(
   for(const extension of registry.extensions)for(const name of extension.schemas)assert.ok(schemas.has(name+'.json'));
   assert.ok(![...schemas.keys()].some(name=>['session-update','ahp-action','root-state'].some(x=>name.includes(x))));
 });
+test('host-only topic scope is explicit and unknown scope is rejected',()=>{
+ const manifest=read('../fixtures/capability-manifest.v1.json'),validate=schemas.get('capability-manifest.v1.json');
+ manifest.topics.maintenance={uri:'amplifier-capability://maintenance/maintenance',version:1,scope:'host',watch:true};assert.equal(validate(manifest),true,JSON.stringify(validate.errors));
+ manifest.topics.maintenance.scope='native-path';assert.equal(validate(manifest),false);
+});

@@ -15,6 +15,10 @@ AHP initialize advertises `_meta['amplifier.dev/capabilities']` only when instal
 Each version1 topic names a URI. Standard `resourceRead` retrieves its JSON
 representation with an explicit `scope` query: an AHP session URI or `host`.
 `resourceWatch` invalidation is supported when `watch:true` is advertised.
+A topic may declare `scope:'host'`; clients then read/watch with `scope=host`
+and send actions on `ahp-root://`, regardless of their selected conversation.
+The default `scope:'context'` keeps the existing selected scope behavior. This
+field is part of the initial pre-release v1 contract, not an upstream AHP field.
 The provider must authorize both the topic and the scope. URI lookup never grants
 arbitrary filesystem access. A client opens only visible topics and may discard
 these derived caches on disconnect or at any time.
@@ -44,7 +48,7 @@ functional without a silent fallback to private host APIs.
 
 ## Native ACP ownership
 
-The independent `microsoft/amplifier-acp` repository owns native ACP extension
+The independent `microsoft/amplifier-app-acp` repository owns native ACP extension
 schemas and fixtures, including `_amplifier/native`, `_amplifier/history` and the
 negotiated host callback. Those contracts can be used without Amplifier Unified.
 This repository owns only the product-specific capability representations and
