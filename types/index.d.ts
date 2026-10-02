@@ -20,11 +20,3 @@ export interface CapabilityResult<T=unknown> {
   accepted:boolean;updates?:CapabilityRecord[];invalidate?:string[];
   result?:T;_meta?:Record<string,unknown>;
 }
-export interface NativeHistoryRequest {sessionId:string;cwd:string;cursor?:string;limit?:number;}
-export interface NativeHistoryResult<SessionUpdate> {
-  updates:SessionUpdate[];
-  turnGroups?:{id:string;updates:SessionUpdate[];state:'unknown'}[];
-  nextCursor:string|null;revision:string;diagnostics:({code:string}&Record<string,unknown>)[];
-}
-export interface NativeRequest {sessionId:string;operation:string;args:Record<string,unknown>;_meta?:Record<string,unknown>;}
-export type HostRequest = NativeRequest;

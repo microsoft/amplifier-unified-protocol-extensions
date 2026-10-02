@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://microsoft.github.io/amplifier-protocol-extensions/schemas/capability-action.v1.json",
+  "$id": "https://microsoft.github.io/amplifier-unified-protocol-extensions/schemas/capability-action.v1.json",
   "type": "object",
   "properties": {
     "channel": {

@@ -1,15 +1,13 @@
-# Amplifier protocol extensions
+# Amplifier Unified protocol extensions
 
-A small public owner for the Amplifier-specific seams used with AHP 0.9 and ACP
-wire version1. Install the package or consume the shipped JSON Schemas directly;
+A small public owner for the Amplifier Unified capability seams used with AHP0.9. Install the package or consume the shipped JSON Schemas directly;
 no client, host, model or native runtime is a dependency. Upstream schemas and
 reducers remain authoritative and are not copied here.
 
 `registry.json` names the extension namespaces, methods and schema versions.
 `schemas/` provides JSON Schema2020-12, `fixtures/` independent wire examples,
 and `types/` TypeScript declarations. `npm test` validates all fixtures plus
-rejection cases. Compatibility tests must also validate nested ACP SessionUpdate
-objects with the upstream ACP schema; this package intentionally does not fork it.
+rejection cases. Compatibility tests validate ordinary protocol objects using upstream schemas.
 
 ## Capability topics
 
@@ -44,34 +42,11 @@ private client migration mappings, not new standard methods. Unknown extension
 versions/methods fail visibly; missing optional capabilities leave ordinary chat
 functional without a silent fallback to private host APIs.
 
-## Native ACP
+## Native ACP ownership
 
-Both sides negotiate `_meta['amplifier.dev/native']:{version:1}` in their ACP
-capabilities before `_amplifier/native`, `_amplifier/history` or native event use.
-`_amplifier/native` preserves native composition/control operations that cannot
-be expressed through standard configOptions. Its capabilities operation describes
-the controls currently supported by that adapter; no arbitrary reflection occurs.
-
-`_amplifier/history` is a passive read of complete native user-turn groups, with
-bounded pages and opaque revision-bound cursors. It does not call session/resume,
-load a worker, acquire execution ownership or replay work. Revision changes
-invalidate the cursor; a client refetches. Missing, malformed or unsupported
-content is diagnosed explicitly and preserved on disk. Standard ACP session/load
-still replays the full visible history and prepares the execution context as ACP
-requires; it is not silently replaced with this extension.
-
-Native `_meta['amplifier.dev/command']` carries a negotiated stable command ID to
-preserve host/native turn identity, not a guarantee of exactly-once tool effects.
-`_amplifier/event` conveys native diagnostics and post-durable-save discovery
-hints. Filesystem locators in these hints stay between the trusted adapter, host
-and catalog; the host validates configured native roots before acting.
-
-ACP `_meta['amplifier.dev/host']:{version:1}` negotiates `_amplifier/host` callbacks.
-The host binds them to the admitted executing native session. Targeted UI/device
-operations additionally require an attached and authorized client target; a
-session does not grant authority over every connected browser. Private local UI
-state is read only for such an explicit, permitted request, never mirrored.
-
-Ordinary ACP-compatible clients need none of these extensions for native chat,
-standard tools/permissions, cancellation and session lifecycle. The native runtime
-remains Amplifier Core plus Foundation, not the separate amplifier-agent product.
+The independent `microsoft/amplifier-acp` repository owns native ACP extension
+schemas and fixtures, including `_amplifier/native`, `_amplifier/history` and the
+negotiated host callback. Those contracts can be used without Amplifier Unified.
+This repository owns only the product-specific capability representations and
+operations. Standard AHP client-provided tools and bidirectional resource access
+serve targeted client interaction; local drafts and editing state are not mirrored.

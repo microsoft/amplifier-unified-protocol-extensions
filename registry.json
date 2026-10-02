@@ -24,30 +24,16 @@
         "capability-action.v1",
         "capability-result.v1"
       ]
-    },
-    {
-      "namespace": "amplifier.dev/native",
-      "protocol": "acp",
-      "version": 1,
-      "methods": [
-        "_amplifier/native",
-        "_amplifier/history",
-        "_amplifier/event"
-      ],
-      "schemas": [
-        "native-request.v1",
-        "native-history-request.v1",
-        "native-history-result.v1"
-      ]
-    },
-    {
-      "namespace": "amplifier.dev/host",
-      "protocol": "acp",
-      "version": 1,
-      "method": "_amplifier/host",
-      "schemas": [
-        "host-request.v1"
+    }
+  ],
+  "related": {
+    "nativeACP": {
+      "repository": "microsoft/amplifier-acp",
+      "schemaDirectory": "schemas",
+      "namespaces": [
+        "amplifier.dev/native",
+        "amplifier.dev/host"
       ]
     }
-  ]
+  }
 }

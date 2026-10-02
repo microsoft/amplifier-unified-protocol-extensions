@@ -1,8 +1,0 @@
-{
-  "sessionId": "native-fixture",
-  "operation": "canvas.show",
-  "args": {
-    "kind": "text",
-    "content": "Fixture"
-  }
-}
