@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://microsoft.github.io/amplifier-protocol-extensions/schemas/capability-record.v1.json",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "topic",
+    "scope",
+    "revision",
+    "data"
+  ],
+  "additionalProperties": false
+}

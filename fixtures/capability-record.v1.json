@@ -1,0 +1,10 @@
+{
+  "topic": "configuration",
+  "scope": "ahp-session:/fixture",
+  "revision": 7,
+  "data": {
+    "configuration": {
+      "providers": []
+    }
+  }
+}

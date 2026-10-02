@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://microsoft.github.io/amplifier-protocol-extensions/schemas/native-request.v1.json",
+  "type": "object",
+  "properties": {
+    "sessionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "operation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "args": {
+      "type": "object"
+    },
+    "_meta": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "sessionId",
+    "operation",
+    "args"
+  ],
+  "additionalProperties": false
+}

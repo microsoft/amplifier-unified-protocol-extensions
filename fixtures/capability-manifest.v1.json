@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "topics": {
+    "configuration": {
+      "uri": "amplifier-capability://configuration",
+      "version": 1,
+      "watch": true
+    }
+  },
+  "actions": {
+    "configuration.inspect": {
+      "topic": "configuration",
+      "operation": "inspect",
+      "method": "x-amplifier/capabilityAction"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@amplifier/protocol-extensions",
+  "version": "0.1.0",
+  "description": "Negotiated Amplifier AHP and ACP extensions; upstream protocols remain authoritative",
+  "type": "module",
+  "license": "MIT",
+  "files": ["schemas", "fixtures", "types", "registry.json", "README.md", "LICENSE"],
+  "exports": {".": {"types": "./types/index.d.ts", "default": "./registry.json"}, "./registry.json": "./registry.json", "./schemas/*": "./schemas/*", "./fixtures/*": "./fixtures/*"},
+  "scripts": {"test": "node --test tests/*.test.mjs"},
+  "devDependencies": {"ajv": "^8.17.1"},
+  "repository": {"type": "git", "url": "https://github.com/microsoft/amplifier-protocol-extensions.git"}
+}

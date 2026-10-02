@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "upstream": {
+    "ahp": {
+      "version": "0.9.0",
+      "source": "https://github.com/microsoft/agent-host-protocol",
+      "revision": "9f940395ce28"
+    },
+    "acp": {
+      "wireVersion": 1,
+      "source": "https://github.com/agentclientprotocol/agent-client-protocol",
+      "revision": "59172bafdf4b"
+    }
+  },
+  "extensions": [
+    {
+      "namespace": "amplifier.dev/capabilities",
+      "protocol": "ahp",
+      "version": 1,
+      "method": "x-amplifier/capabilityAction",
+      "schemas": [
+        "capability-manifest.v1",
+        "capability-record.v1",
+        "capability-action.v1",
+        "capability-result.v1"
+      ]
+    },
+    {
+      "namespace": "amplifier.dev/native",
+      "protocol": "acp",
+      "version": 1,
+      "methods": [
+        "_amplifier/native",
+        "_amplifier/history",
+        "_amplifier/event"
+      ],
+      "schemas": [
+        "native-request.v1",
+        "native-history-request.v1",
+        "native-history-result.v1"
+      ]
+    },
+    {
+      "namespace": "amplifier.dev/host",
+      "protocol": "acp",
+      "version": 1,
+      "method": "_amplifier/host",
+      "schemas": [
+        "host-request.v1"
+      ]
+    }
+  ]
+}

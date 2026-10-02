@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://microsoft.github.io/amplifier-protocol-extensions/schemas/capability-action.v1.json",
+  "type": "object",
+  "properties": {
+    "channel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "operation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8192
+    },
+    "version": {
+      "const": 1
+    },
+    "args": {
+      "type": "object"
+    },
+    "commandId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "_meta": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "channel",
+    "topic",
+    "operation",
+    "version",
+    "args",
+    "commandId"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,8 @@
+{
+  "channel": "ahp-session:/fixture",
+  "topic": "configuration",
+  "operation": "inspect",
+  "version": 1,
+  "args": {},
+  "commandId": "fixture-inspect-1"
+}
