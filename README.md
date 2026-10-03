@@ -1,5 +1,9 @@
 # Amplifier Unified protocol extensions
 
+Start with [local vision](docs/VISION.md), [extension contract v1](docs/extensions.v1.md)
+and [repository contributor/agent entry](AGENTS.md). These link the approved family
+direction, ownership, consumer obligations, checks and remaining acceptance.
+
 A small public owner for the Amplifier Unified capability seams used with AHP0.9. Install the package or consume the shipped JSON Schemas directly;
 no client, host, model or native runtime is a dependency. Upstream schemas and
 reducers remain authoritative and are not copied here.

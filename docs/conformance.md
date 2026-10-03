@@ -1,5 +1,8 @@
 # v1 conformance and ownership
 
+Contract entry: [extensions v1](extensions.v1.md); purpose: [local vision](VISION.md).
+The findings below are the recorded baseline audit, not a current deployment claim.
+
 These schemas describe negotiated Unified extensions. They grant no permission.
 The original four envelope schemas, URI spelling, methods, field bounds and v1
 version are unchanged. The three product appReset argument schemas are additive.
