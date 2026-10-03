@@ -7,7 +7,9 @@ reducers remain authoritative and are not copied here.
 `registry.json` names the extension namespaces, methods and schema versions.
 `schemas/` provides JSON Schema2020-12, `fixtures/` independent wire examples,
 and `types/` TypeScript declarations. `npm test` validates all fixtures plus
-rejection cases. Compatibility tests validate ordinary protocol objects using upstream schemas.
+rejection cases. The explicit `verify:peers` qualifier validates ordinary protocol objects using
+read-only upstream schemas; it is separate from `npm test`. See
+[conformance, owner checks and open findings](docs/conformance.md).
 
 ## Capability topics
 
@@ -54,3 +56,13 @@ negotiated host callback. Those contracts can be used without Amplifier Unified.
 This repository owns only the product-specific capability representations and
 operations. Standard AHP client-provided tools and bidirectional resource access
 serve targeted client interaction; local drafts and editing state are not mirrored.
+
+## Generated bindings and product recovery
+
+Run `npm run generate` after schema changes; `npm run check:generated` and the
+consumer type test detect drift. Existing generic interfaces remain available.
+The additive `recovery-app-reset-*.v1.json` schemas describe current product
+argument shapes only. Exact negotiated actions/parts and runtime review, account,
+receipt and maintenance authority remain with the recovery owner. Native ACP
+managed-file, retired-copy, cache and reset schemas remain at their public owner
+referenced by `registry.json`.

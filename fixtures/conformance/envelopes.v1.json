@@ -1,0 +1,464 @@
+[
+  {
+    "name": "authority is not part of envelope accountId",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "fixture-inspect-1",
+      "accountId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "authority is not part of envelope actorId",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "fixture-inspect-1",
+      "actorId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "authority is not part of envelope clientId",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "fixture-inspect-1",
+      "clientId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "authority is not part of envelope sessionId",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "fixture-inspect-1",
+      "sessionId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "authority is not part of envelope cwd",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "fixture-inspect-1",
+      "cwd": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "command ID above published v1 bound",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 1,
+      "args": {},
+      "commandId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "valid": false
+  },
+  {
+    "name": "unnegotiated action version",
+    "schema": "capability-action.v1",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "topic": "configuration",
+      "operation": "inspect",
+      "version": 2,
+      "args": {},
+      "commandId": "fixture-inspect-1"
+    },
+    "valid": false
+  },
+  {
+    "name": "unsafe revision",
+    "schema": "capability-record.v1",
+    "value": {
+      "topic": "configuration",
+      "scope": "ahp-session:/fixture",
+      "revision": 9007199254740992,
+      "data": {
+        "configuration": {
+          "providers": []
+        }
+      }
+    },
+    "valid": false
+  },
+  {
+    "name": "invalidation budget",
+    "schema": "capability-result.v1",
+    "value": {
+      "accepted": true,
+      "invalidate": [
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration",
+        "configuration"
+      ]
+    },
+    "valid": false
+  },
+  {
+    "name": "current prepare args",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "native.app-bundle-default"
+      ],
+      "privateContentReviewed": true
+    },
+    "valid": true
+  },
+  {
+    "name": "prepare rejects foreign authority selector accountId",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "native.app-bundle-default"
+      ],
+      "privateContentReviewed": true,
+      "accountId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare rejects foreign authority selector cwd",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "native.app-bundle-default"
+      ],
+      "privateContentReviewed": true,
+      "cwd": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare rejects foreign authority selector sessionId",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "native.app-bundle-default"
+      ],
+      "privateContentReviewed": true,
+      "sessionId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare rejects empty, shared or duplicate parts []",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [],
+      "privateContentReviewed": true
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare rejects empty, shared or duplicate parts ['shared.keys']",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "shared.keys"
+      ],
+      "privateContentReviewed": true
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare rejects empty, shared or duplicate parts ['notifications.settings', 'notifications.settings']",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "notifications.settings",
+        "notifications.settings"
+      ],
+      "privateContentReviewed": true
+    },
+    "valid": false
+  },
+  {
+    "name": "prepare requires reviewed private content",
+    "schema": "recovery-app-reset-prepare.v1",
+    "value": {
+      "parts": [
+        "native.app-bundle-default"
+      ],
+      "privateContentReviewed": false
+    },
+    "valid": false
+  },
+  {
+    "name": "current apply args",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "valid": true
+  },
+  {
+    "name": "apply rejects foreign authority selector accountId",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "accountId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "apply rejects foreign authority selector cwd",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "cwd": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "apply rejects foreign authority selector sessionId",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sessionId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "apply requires original preparedJobId",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "valid": false
+  },
+  {
+    "name": "apply requires original previewHash",
+    "schema": "recovery-app-reset-apply.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc"
+    },
+    "valid": false
+  },
+  {
+    "name": "current restore args",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "valid": true
+  },
+  {
+    "name": "restore rejects foreign authority selector accountId",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "accountId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "restore rejects foreign authority selector cwd",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "cwd": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "restore rejects foreign authority selector sessionId",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sessionId": "untrusted"
+    },
+    "valid": false
+  },
+  {
+    "name": "restore requires original preparedJobId",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "previewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "valid": false
+  },
+  {
+    "name": "restore requires original previewHash",
+    "schema": "recovery-app-reset-restore.v1",
+    "value": {
+      "preparedJobId": "12345678-1234-1234-1234-123456789abc",
+      "resetJobId": "abcdefab-1234-1234-1234-123456789abc",
+      "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "valid": false
+  }
+]

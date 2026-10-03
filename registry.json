@@ -28,12 +28,42 @@
   ],
   "related": {
     "nativeACP": {
-      "repository": "microsoft/amplifier-acp",
+      "repository": "microsoft/amplifier-app-acp",
       "schemaDirectory": "schemas",
       "namespaces": [
         "amplifier.dev/native",
         "amplifier.dev/host"
-      ]
+      ],
+      "methods": [
+        "_amplifier/native",
+        "_amplifier/history",
+        "_amplifier/history/inspect",
+        "_amplifier/admin",
+        "_amplifier/host"
+      ],
+      "schemas": {
+        "appReset": "native-app-reset.v1.json",
+        "managedFiles": "native-managed-files.v1.json",
+        "retiredCopies": "native-retired-copy.v1.json",
+        "cacheInventory": "native-cache-page.v1.json",
+        "history": "native-history-result.v1.json"
+      }
+    },
+    "productRecovery": {
+      "repository": "microsoft/amplifier-unified",
+      "directory": "components/recovery-capability",
+      "topic": "recovery",
+      "operations": [
+        "recovery.appReset.prepare",
+        "recovery.appReset.apply",
+        "recovery.appReset.restore"
+      ],
+      "schemas": [
+        "recovery-app-reset-prepare.v1",
+        "recovery-app-reset-apply.v1",
+        "recovery-app-reset-restore.v1"
+      ],
+      "note": "Schemas describe v1 argument shapes. Exact action advertisement, registered parts, account ownership, fresh reviews and held owner authority are required separately."
     }
   }
 }

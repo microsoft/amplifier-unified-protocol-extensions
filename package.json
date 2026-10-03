@@ -1,6 +1,6 @@
 {
   "name": "@amplifier/unified-protocol-extensions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Negotiated capability contracts for Amplifier Unified AHP components",
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,10 @@
     "types",
     "registry.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs",
+    "scripts",
+    "tests"
   ],
   "exports": {
     ".": {
@@ -22,10 +25,15 @@
     "./fixtures/*": "./fixtures/*"
   },
   "scripts": {
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "generate": "node scripts/generate-types.mjs",
+    "check:generated": "node scripts/generate-types.mjs --check",
+    "verify:peers": "node scripts/verify-peers.mjs"
   },
   "devDependencies": {
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "typescript": "^7.0.2"
   },
   "repository": {
     "type": "git",

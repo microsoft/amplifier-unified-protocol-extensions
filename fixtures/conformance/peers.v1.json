@@ -1,0 +1,301 @@
+[
+  {
+    "name": "AHP initialize with negotiated optional metadata",
+    "peer": "ahp",
+    "definition": "InitializeResult",
+    "value": {
+      "protocolVersion": "0.9.0",
+      "serverSeq": 0,
+      "snapshots": [],
+      "_meta": {
+        "amplifier.dev/capabilities": {
+          "version": 1,
+          "topics": {
+            "configuration": {
+              "uri": "amplifier-capability://configuration",
+              "version": 1,
+              "watch": true
+            }
+          },
+          "actions": {
+            "configuration.inspect": {
+              "topic": "configuration",
+              "operation": "inspect",
+              "method": "x-amplifier/capabilityAction"
+            }
+          }
+        },
+        "unrelated.example/optional": {
+          "version": 77
+        }
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP initialize without optional metadata",
+    "peer": "ahp",
+    "definition": "InitializeResult",
+    "value": {
+      "protocolVersion": "0.9.0",
+      "serverSeq": 0,
+      "snapshots": []
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP resource read uses root channel and explicit selected scope",
+    "peer": "ahp",
+    "definition": "ResourceReadParams",
+    "value": {
+      "channel": "ahp-root://",
+      "uri": "amplifier-capability://configuration?scope=ahp-session%3A%2Ffixture",
+      "encoding": "utf-8"
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP resourceRead rejects a selected session channel",
+    "peer": "ahp",
+    "definition": "ResourceReadParams",
+    "value": {
+      "channel": "ahp-session:/fixture",
+      "uri": "amplifier-capability://configuration?scope=host"
+    },
+    "valid": false
+  },
+  {
+    "name": "AHP topic is JSON inside standard resourceRead result",
+    "peer": "ahp",
+    "definition": "ResourceReadResult",
+    "value": {
+      "data": "{\n  \"topic\": \"configuration\",\n  \"scope\": \"ahp-session:/fixture\",\n  \"revision\": 7,\n  \"data\": {\n    \"configuration\": {\n      \"providers\": []\n    }\n  }\n}\n",
+      "encoding": "utf-8",
+      "contentType": "application/json"
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP resource watch uses standard root channel",
+    "peer": "ahp",
+    "definition": "CreateResourceWatchParams",
+    "value": {
+      "channel": "ahp-root://",
+      "uri": "amplifier-capability://configuration?scope=host"
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP watch returns standard watch URI",
+    "peer": "ahp",
+    "definition": "CreateResourceWatchResult",
+    "value": {
+      "channel": "ahp-resource-watch:/fixture"
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP v1 initialize advertises native namespace without changing core",
+    "peer": "acp",
+    "definition": "InitializeResponse",
+    "value": {
+      "protocolVersion": 1,
+      "agentCapabilities": {
+        "_meta": {
+          "amplifier.dev/native": {
+            "version": 1
+          }
+        }
+      },
+      "authMethods": []
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP ordinary initialize remains valid without optional native metadata",
+    "peer": "acp",
+    "definition": "InitializeResponse",
+    "value": {
+      "protocolVersion": 1,
+      "agentCapabilities": {},
+      "authMethods": []
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP v1 rejects string protocol version",
+    "peer": "acp",
+    "definition": "InitializeResponse",
+    "value": {
+      "protocolVersion": "1",
+      "agentCapabilities": {},
+      "authMethods": []
+    },
+    "valid": false
+  },
+  {
+    "name": "managedFiles.preview native owner shape",
+    "peer": "nativeManaged",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "managedFiles.preview",
+      "args": {}
+    },
+    "valid": true
+  },
+  {
+    "name": "managedFiles.preview rejects client-supplied native path in args",
+    "peer": "nativeManaged",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "managedFiles.preview",
+      "args": {
+        "cwd": "/untrusted"
+      }
+    },
+    "valid": false
+  },
+  {
+    "name": "managedFiles.dispose native owner shape",
+    "peer": "nativeManaged",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "managedFiles.dispose",
+      "args": {
+        "commandId": "original-disposal",
+        "reviewId": "review",
+        "reviewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "expectedHistoryRevision": "revision"
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "managedFiles.dispose rejects client-supplied native path in args",
+    "peer": "nativeManaged",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "managedFiles.dispose",
+      "args": {
+        "commandId": "original-disposal",
+        "reviewId": "review",
+        "reviewHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "expectedHistoryRevision": "revision",
+        "cwd": "/untrusted"
+      }
+    },
+    "valid": false
+  },
+  {
+    "name": "managedFiles.receipt native owner shape",
+    "peer": "nativeManaged",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "managedFiles.receipt",
+      "args": {
+        "commandId": "original-disposal"
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "legacyCopy.inventory native owner shape",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.inventory",
+      "args": {}
+    },
+    "valid": true
+  },
+  {
+    "name": "legacyCopy.preview native owner shape",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.preview",
+      "args": {
+        "rootId": "retired-app"
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "legacyCopy.preview rejects client-supplied native path in args",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.preview",
+      "args": {
+        "rootId": "retired-app",
+        "cwd": "/untrusted"
+      }
+    },
+    "valid": false
+  },
+  {
+    "name": "legacyCopy.purge native owner shape",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.purge",
+      "args": {
+        "commandId": "original-purge",
+        "previewId": "12345678-1234-1234-1234-123456789abc",
+        "previewHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "expectedHistoryRevision": "revision"
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "legacyCopy.purge rejects client-supplied native path in args",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.purge",
+      "args": {
+        "commandId": "original-purge",
+        "previewId": "12345678-1234-1234-1234-123456789abc",
+        "previewHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "expectedHistoryRevision": "revision",
+        "cwd": "/untrusted"
+      }
+    },
+    "valid": false
+  },
+  {
+    "name": "legacyCopy.receipt native owner shape",
+    "peer": "nativeRetired",
+    "definition": null,
+    "value": {
+      "sessionId": "native-fixture",
+      "cwd": "/fixture/owned-history",
+      "operation": "legacyCopy.receipt",
+      "args": {
+        "commandId": "original-purge"
+      }
+    },
+    "valid": true
+  }
+]
