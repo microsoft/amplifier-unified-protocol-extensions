@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://microsoft.github.io/amplifier-unified-protocol-extensions/schemas/recovery-app-reset-apply.v1.json",
+  "description": "Current product recovery argument shape; exact negotiated parts and trusted authorization are checked by the owner. This schema alone grants no reset authority.",
+  "type": "object",
+  "properties": {
+    "preparedJobId": {
+      "type": "string",
+      "pattern": "^[a-f0-9-]{36}$"
+    },
+    "previewHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "preparedJobId",
+    "previewHash"
+  ],
+  "additionalProperties": false
+}

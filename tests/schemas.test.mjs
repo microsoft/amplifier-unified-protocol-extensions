@@ -24,3 +24,13 @@ test('host-only topic scope is explicit and unknown scope is rejected',()=>{
  manifest.topics.maintenance={uri:'amplifier-capability://maintenance/maintenance',version:1,scope:'host',watch:true};assert.equal(validate(manifest),true,JSON.stringify(validate.errors));
  manifest.topics.maintenance.scope='native-path';assert.equal(validate(manifest),false);
 });
+for(const row of read('../fixtures/conformance/envelopes.v1.json'))test(row.name,()=>{
+ const validate=schemas.get(row.schema+'.json');assert.ok(validate,'Missing published schema');
+ assert.equal(Boolean(validate(row.value)),row.valid,JSON.stringify(validate.errors));
+});
+test('native schemas remain referenced at their public owner',()=>{
+ const registry=read('../registry.json');
+ assert.equal(registry.related.nativeACP.repository,'microsoft/amplifier-app-acp');
+ for(const filename of Object.values(registry.related.nativeACP.schemas))assert.ok(!schemas.has(filename));
+ for(const name of registry.related.productRecovery.schemas)assert.ok(schemas.has(name+'.json'));
+});
