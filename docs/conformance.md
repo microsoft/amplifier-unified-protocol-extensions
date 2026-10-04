@@ -132,3 +132,29 @@ JSON shape alone cannot classify effect outcomes. Operations owns message semant
 native ACP/bridge owns model semantics, host owns admission/publication and the
 client kit owns transport. The live preview's original unknown bundle/Smart Tool
 commands are not executed or replayed by this audit.
+
+### Approved native message-owner alignment
+
+The coordinator approved a bounded, lazily opened per-selected-session adjunct
+SQLite annotation/receipt sidecar. Passive reads create no database. It does not
+rewrite canonical transcripts or become a new native history/resume authority.
+The native message owner supplies the actual schema and implementation; this
+registry does not introduce a general message protocol or duplicate that schema.
+
+Native references use `{messageId, position, historyEpoch}` with an optional
+verified digest. Appending history preserves an existing reference; a reset or
+incompatible history epoch makes it stale. Trusted actor identity is injected by
+the authenticated host/native bridge, never taken from caller arguments. Reaction
+changes set the desired `present` value for that actor rather than toggle another
+actor's aggregate state. Explicit send validates and freezes a quote bounded to
+4,000 characters; selecting or clearing it locally makes zero RPC calls.
+
+Native `_amplifier/message/{reaction,read,receipt}` remains native-owner namespace.
+The bridge advertises product `message.reaction`, `message.read` and
+`message.receipt` only after their actual implementation is negotiated. There is
+no backend `message.reply` action. A generic ACP/AHP peer without this optional
+support keeps ordinary chat; clients retain local quote drafting and expose the
+missing shared mutation explicitly. Exact receipt lookup is passive and never
+replays a reaction or prompt. Handshake markers describe support, not permission
+or successful account/runtime qualification. Native/bridge installed tests and
+two-client/browser privacy checks still supply the behavior evidence.
