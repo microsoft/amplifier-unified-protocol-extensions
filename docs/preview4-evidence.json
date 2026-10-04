@@ -60,6 +60,60 @@
       "id": "components-source",
       "sha256": "4e8f4e81df355570a82635f32f7b77906d54c8dab8615d8deeb2b344fe0de739",
       "bytes": 8272
+    },
+    {
+      "id": "catalog-final-installed",
+      "sha256": "12ccb6944e698bd10490eeaa821fcfe667e42bad2f008f209bd97c4f40d64b9e",
+      "bytes": 4293,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "native-bridge-final-installed",
+      "sha256": "3eb8d468ed683ed67dab61f9b5451ece4cfa2ac7b8d723750614fe4cb353c4c3",
+      "bytes": 2378,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "operations-message-precursor",
+      "sha256": "1c3df6daef449854ef10ca13a640e6993c2a4f6576d851b458c3d9810a43dad2",
+      "bytes": 3114,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "operations-boundary-precursor",
+      "sha256": "828553107e4254c3edad1b6ecc628401aa5ddff75db3a224cfa2d5e0ec2284ea",
+      "bytes": 4222,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "tui-picker-offline",
+      "sha256": "ba91cc1e4cc87e115e075b53ec448a338c8ca1d3503e19aab9ac40f5e84d6013",
+      "bytes": 3414,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "tui-independent-review",
+      "sha256": "06646dd411e9b792d95201396da8962da24b2b67454959a31fd4c26e952a972d",
+      "bytes": 3235,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "updates-grant-component",
+      "sha256": "24b66547ed7fcf2b70d151ae0bc5b745d1e888dae67eec12c3d62ffac8d3e215",
+      "bytes": 2776,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "updates-installed-mode-component",
+      "sha256": "150d7561169b897647898b22073d7093c6a96b34169cbb0d39169bdd9572cbdd",
+      "bytes": 5203,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
+    },
+    {
+      "id": "updates-evidence-v2-component",
+      "sha256": "d3c1519dbe9c67f307244815cdda3c8b9c5cbfca205b3a68934ba158a491f9f1",
+      "bytes": 3854,
+      "boundary": "Component/precursor receipt only; not a new Preview4 live or whole-control qualification."
     }
   ],
   "components": {
@@ -247,5 +301,12 @@
     "nativeSchemaIDs": "Not independently rechecked in this lane; migration remains native-owned",
     "customURISchemes": "No wire migration approved; current spelling preserved",
     "runtimeAndAccount": "No fresh runtime/account qualification claimed; owner source+installed receipts remain distinct"
+  },
+  "ownerReceiptReconciliation": {
+    "catalog": "0538 exact component100 source/100 installed; broader control/live variants not promoted.",
+    "operations": "605d message storage precursor implemented later in native ab35; old absence finding is historical, not current; full-product backup remains incomplete.",
+    "nativeBridge": "Exact86 with final ab35 narrow installed three-case recheck; no browser or deployment proof by component.",
+    "tui": "Offline picker/draft/refusal and historical connected-terminal receipts; no live message-action/override/device parity promotion.",
+    "updates": "92a grants,57e installed modes,d4c qualification-v2 are component precursor evidence composed by Root; scoped37 skips retained, no F12 form/timeline blanket promotion."
   }
 }
