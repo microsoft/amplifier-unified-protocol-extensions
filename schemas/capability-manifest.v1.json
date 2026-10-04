@@ -73,5 +73,6 @@
     "topics",
     "actions"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "description": "Negotiated extension shapes and callable operation names. Advertisement does not grant permission or prove credentials/runtime readiness; exact owner refusals and original receipts remain authoritative."
 }

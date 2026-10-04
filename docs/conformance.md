@@ -83,3 +83,78 @@ acceptance boundaries.
 
 Upstream rules: [AHP extension overview](https://microsoft.github.io/agent-host-protocol/specification/overview.html)
 and [ACP v1 overview](https://github.com/agentclientprotocol/agent-client-protocol/blob/main/docs/protocol/v1/overview.mdx).
+
+## Preview gap decisions — 2026-10-03
+
+These clarify existing HP1/HP5/HP6, AP4/AP5 and CS2/CS4/CS6/CS9 obligations;
+they add no wire fields, new method or ratified scope. Runtime owners retain
+implementation and acceptance. The reviewed family source for this follow-up is
+[bf86788](https://github.com/microsoft/amplifier-unified/blob/bf86788b7cf46d5b529eaf07d4187e4c142c141b/contracts/host-protocol.v1.md).
+
+- **Advertised versus usable:** the manifest names negotiated topic/action shapes,
+  not account permission, credentials, connectedness or mounted runtime state.
+  Do not show a successful capability read as proof that a mutation is usable.
+  Required behavior remains a qualification gap when absent; a UI affordance
+  alone is not evidence, and hiding it does not complete the requirement.
+- **Model selection:** use the selected peer's standard ACP `configOptions` and
+  `session/set_config_option`; preserve its supplied `configId`, choice values,
+  current value and returned full option set. `category:model` aids presentation;
+  it does not require the option ID to be `model`. The host projects standard AHP
+  configuration and applies `session/configChanged` only to properties marked
+  `sessionMutable:true` and not read-only. Do not invent a product model action or
+  advertise successful mounting from an unconfirmed saved choice.
+- **Definite refusal versus unknown:** extension `accepted` reports action
+  handling/admission, not completion of a downstream effect. For example, accepted
+  handling may return an authoritative downstream refusal with `executed:false`.
+  A standard correlated AHP rejection or an authoritative owner pre-effect refusal
+  is definite for the rejected action. An arbitrary RPC code/message, a timeout,
+  `accepted:false` alone, or a missing terminal receipt is not proof of no effect.
+  Preserve and inspect the original command; never infer replay permission. Show
+  confirmation only for an explicit current review/confirmation requirement, not
+  as the generic label for a disabled feature or definite refusal. User-facing
+  summaries should explain the available next step without internal RPC names.
+- **Replies and reactions:** choosing or clearing a quote is private client drafting
+  under CS2 and causes no backend mutation; it does not require an advertised
+  `message.reply` action. Explicit send admits the reply through the existing
+  conversation-send path. Any accepted reference must bind the authorized stable
+  target message and original conversation, with bounded owner-validated data;
+  arbitrary quoted text/native paths cannot grant access. Reactions are explicit
+  shared mutations with an advertised owner, authenticated actor and stable target.
+  Publish only to interested authorized subscribers; neither reactions nor late
+  quote reads may overwrite another conversation's unsent draft. Standard AHP
+  file-anchored annotations are not an interchangeable message-reaction fallback.
+
+The added official-schema fixtures validate model control wire shapes and an
+arbitrary configuration identity. They do not prove runtime mutability, offered
+model entitlement or model calls. The result fixtures deliberately permit both
+accepted handling with a downstream refusal and an unknown asynchronous job;
+JSON shape alone cannot classify effect outcomes. Operations owns message semantics,
+native ACP/bridge owns model semantics, host owns admission/publication and the
+client kit owns transport. The live preview's original unknown bundle/Smart Tool
+commands are not executed or replayed by this audit.
+
+### Approved native message-owner alignment
+
+The coordinator approved a bounded, lazily opened per-selected-session adjunct
+SQLite annotation/receipt sidecar. Passive reads create no database. It does not
+rewrite canonical transcripts or become a new native history/resume authority.
+The native message owner supplies the actual schema and implementation; this
+registry does not introduce a general message protocol or duplicate that schema.
+
+Native references use `{messageId, position, historyEpoch}` with an optional
+verified digest. Appending history preserves an existing reference; a reset or
+incompatible history epoch makes it stale. Trusted actor identity is injected by
+the authenticated host/native bridge, never taken from caller arguments. Reaction
+changes set the desired `present` value for that actor rather than toggle another
+actor's aggregate state. Explicit send validates and freezes a quote bounded to
+4,000 characters; selecting or clearing it locally makes zero RPC calls.
+
+Native `_amplifier/message/{reaction,read,receipt}` remains native-owner namespace.
+The bridge advertises product `message.reaction`, `message.read` and
+`message.receipt` only after their actual implementation is negotiated. There is
+no backend `message.reply` action. A generic ACP/AHP peer without this optional
+support keeps ordinary chat; clients retain local quote drafting and expose the
+missing shared mutation explicitly. Exact receipt lookup is passive and never
+replays a reaction or prompt. Handshake markers describe support, not permission
+or successful account/runtime qualification. Native/bridge installed tests and
+two-client/browser privacy checks still supply the behavior evidence.

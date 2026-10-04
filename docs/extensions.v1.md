@@ -7,7 +7,8 @@ Parent: [local vision](VISION.md). Wire definitions: [registry](../registry.json
 [AHP](https://microsoft.github.io/agent-host-protocol/specification/overview.html)
 and [ACP](https://github.com/agentclientprotocol/agent-client-protocol/blob/main/docs/protocol/v1/overview.mdx)
 remain authoritative. Existing [conformance documentation](conformance.md)
-provides operation-specific boundaries and reproduction instructions.
+provides operation-specific boundaries and reproduction instructions, including
+[preview availability, model, outcome and reply/privacy decisions](conformance.md#preview-gap-decisions--2026-10-03).
 
 ## Inherited direction
 

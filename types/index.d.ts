@@ -3,13 +3,13 @@
 /** capability-action.v1.json; SHA256 b5dd01f95666fe6e53f42220265c452dc4158661fb9f66bcbdb616bd96646db8 */
 export interface CapabilityAction { "channel": string; "topic": string; "operation": string; "version": 1; "args": { [key: string]: unknown; }; "commandId": string; "_meta"?: { [key: string]: unknown; }; }
 
-/** capability-manifest.v1.json; SHA256 441e981cca0c75639bc291d53409b6b746dbdbac409ee1d911e8178537271629 */
+/** capability-manifest.v1.json; SHA256 4691aec776ea4970663707259b4780b649222572279c73ac8e5048c775408359 */
 export interface CapabilityManifest { "version": 1; "topics": { [key: string]: { "uri": string; "version": 1; "watch"?: boolean; "scope"?: "context" | "host"; }; }; "actions": { [key: string]: { "topic": string; "operation": string; "method": "x-amplifier/capabilityAction"; }; }; }
 
 /** capability-record.v1.json; SHA256 9a4aad5893cfb741a6ca033ac8bbaff710dc61c4615465537b06bbf4fade1705 */
 export interface CapabilityRecord<T extends object = Record<string, unknown>> { "topic": string; "scope": string; "revision": number; "data": T; }
 
-/** capability-result.v1.json; SHA256 377d6c4f812c80de06010f2fce980df1782fa4882114843459e354b5acdd4ca9 */
+/** capability-result.v1.json; SHA256 9f7c4b4cb2092954f2bfd9c3316efb076ff270fa98234ce850d71cca7c559c7a */
 export interface CapabilityResult<T = unknown> { "accepted": boolean; "updates"?: CapabilityRecord[]; "invalidate"?: Array<string>; "result"?: T; "_meta"?: { [key: string]: unknown; }; }
 
 /** recovery-app-reset-apply.v1.json; SHA256 fd413c8421579631818a37f2f33fa4f6a474eb2c4f51200765b85f57cf2dea44 */

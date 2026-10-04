@@ -297,5 +297,97 @@
       }
     },
     "valid": true
+  },
+  {
+    "name": "ACP model selector uses advertised arbitrary config identity",
+    "peer": "acp",
+    "definition": "SessionConfigOption",
+    "value": {
+      "id": "engine-model-choice",
+      "name": "Model",
+      "category": "model",
+      "type": "select",
+      "currentValue": "provider/default",
+      "options": [
+        {
+          "value": "provider/default",
+          "name": "Default model"
+        },
+        {
+          "value": "provider/alternative",
+          "name": "Alternative model"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP model change is standard session config request",
+    "peer": "acp",
+    "definition": "SetSessionConfigOptionRequest",
+    "value": {
+      "sessionId": "native-fixture",
+      "configId": "engine-model-choice",
+      "value": "provider/alternative"
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP confirmed model change returns full config options",
+    "peer": "acp",
+    "definition": "SetSessionConfigOptionResponse",
+    "value": {
+      "configOptions": [
+        {
+          "id": "engine-model-choice",
+          "name": "Model",
+          "category": "model",
+          "type": "select",
+          "currentValue": "provider/alternative",
+          "options": [
+            {
+              "value": "provider/default",
+              "name": "Default model"
+            },
+            {
+              "value": "provider/alternative",
+              "name": "Alternative model"
+            }
+          ]
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "name": "ACP rejects model change without advertised config identity",
+    "peer": "acp",
+    "definition": "SetSessionConfigOptionRequest",
+    "value": {
+      "sessionId": "native-fixture",
+      "value": "provider/alternative"
+    },
+    "valid": false
+  },
+  {
+    "name": "AHP model change remains standard configuration action",
+    "peer": "ahpActions",
+    "definition": "SessionConfigChangedAction",
+    "value": {
+      "type": "session/configChanged",
+      "config": {
+        "engine-model-choice": "provider/alternative"
+      }
+    },
+    "valid": true
+  },
+  {
+    "name": "AHP rejects missing standard configuration action payload",
+    "peer": "ahpActions",
+    "definition": "SessionConfigChangedAction",
+    "value": {
+      "type": "session/configChanged"
+    },
+    "valid": false
   }
 ]
