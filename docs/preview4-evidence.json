@@ -231,5 +231,21 @@
     "Root checkpoint reports OpenAI inference, model selection, saved reaction and configured voice; Anthropic quoted inference failed; physical audio and connection readiness unqualified.",
     "Post-Preview4 successors require new exact source/artifact/installed and live evidence.",
     "Existing source-currency exceptions and untested third-party/device cases remain unresolved."
-  ]
+  ],
+  "historicalFindingArchiveInspection": {
+    "scope": "Read-only exact archive definition inspection, no execution or runtime suite rerun",
+    "archiveChecks": {
+      "hostCommandId256": true,
+      "hostExplicitOneScope": true,
+      "hostOnlyAdmission": true,
+      "registeredAppPartsBound": true
+    },
+    "hostArchiveSHA256": "090119fb0def6eb8a5470777887c19631cd45a79f7514750870026297fa1c3fb",
+    "hostModuleSHA256": "d4a3899eaa7f077caea45e9156412fa8e40f79ca4039104e6d6af182b63713ff",
+    "recoveryArchiveSHA256": "c9306ab192059c58b8b529f1a7bdbdbc671d9a2c389b51b2539eaa15fb52ee44",
+    "recoveryDefinitionsSHA256": "89f109529e8a269db59b8a8f591a620b38c1edccd0c98b04f8b32cd3371cefe1",
+    "nativeSchemaIDs": "Not independently rechecked in this lane; migration remains native-owned",
+    "customURISchemes": "No wire migration approved; current spelling preserved",
+    "runtimeAndAccount": "No fresh runtime/account qualification claimed; owner source+installed receipts remain distinct"
+  }
 }
