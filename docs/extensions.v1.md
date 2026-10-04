@@ -56,3 +56,7 @@ No novel obligations are ratified here. Any proposal to change wire schemes,
 versions, capability meaning, native schema identity or product scope must name
 the producer, affected consumers, reviewed compatibility and falsifiable
 acceptance. Pending family decisions remain pending.
+
+The [Preview4 parity checkpoint](preview4-parity-evidence.md) records exact later
+owner artifacts and acceptance limits without replacing these historical receipts
+or changing the public contract.
