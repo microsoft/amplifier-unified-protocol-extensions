@@ -2,6 +2,8 @@
 
 Contract entry: [extensions v1](extensions.v1.md); purpose: [local vision](VISION.md).
 The findings below are the recorded baseline audit, not a current deployment claim.
+For the later fixed checkpoint, see [Preview4 parity evidence](preview4-parity-evidence.md)
+and its [hashed evidence index](preview4-evidence.json).
 
 These schemas describe negotiated Unified extensions. They grant no permission.
 The original four envelope schemas, URI spelling, methods, field bounds and v1
@@ -64,7 +66,7 @@ The registry's original upstream revisions remain historical baseline references
 not a latest-qualified claim. Exact artifact hashes and command logs are in the
 owner handoff, separate from this public contract.
 
-## Open cross-owner findings
+## Historical cross-owner findings
 
 | Finding | Evidence | Owner / disposition |
 | --- | --- | --- |
@@ -74,6 +76,26 @@ owner handoff, separate from this public contract.
 | Existing custom resource URI schemes do not use upstream reserved `x-` prefix | `amplifier-capability://` and native export/resource references | Coordinated host/client/product migration required. Preserve current wire spelling; schema validation accepts URI strings but does not establish this naming conformance. |
 | Native schema `$id` values still name `amplifier-acp` | native owner18 schemas including retired-copy; some schemas omit `$id` | Native owner owns ID/alias compatibility. Registry repository correction does not rewrite schema identity. |
 | Sealed c496 recovery uses fixed prepare.maxItems3; current source uses registered part count4 | actual executable owner-definition comparison | Distribution/recovery owner; source and installed qualifiers remain separate. c496 was qualified for three parts. Seal a new artifact for four-part support; this is not a failure of its claimed three-part scope. |
+
+### Preview4 disposition recheck
+
+The historical rows above preserve the original findings. Exact archive inspection
+at the [Preview4 checkpoint](preview4-parity-evidence.md) gives these later
+source/installed-definition dispositions; this docs change reruns no runtime suite.
+
+| Historical finding | Current disposition and evidence boundary |
+| --- | --- |
+| Command ID bound | Addressed in host `5d46901ca16a3c119ec6635cba1b732ac4c3c4d7`, exact archive `090119fb0def6eb8a5470777887c19631cd45a79f7514750870026297fa1c3fb`: new actions enforce256 Unicode characters, with a512 UTF-16-unit guard. Existing tests cover astral characters and passive recovery of legacy257/512-character receipts; legacy receipts are preserved, not truncated or replayed. |
+| Omitted resource scope | Exact installed host requires precisely one nonempty valid explicit scope for resource reads/watches; no host default. Existing owner conformance tests cover omission, empty/duplicate scope and host-only topics. |
+| Host-only action admission | Exact installed host refuses a host-only topic on a non-root channel before durable admission. Existing owner tests cover client and trusted native callers with zero owner action calls. Authenticated product-owner authorization remains necessary. |
+| Recovery fixed three-part appReset bound | Historical c496 stays qualified for its original subset. Exact Preview4 recovery archive `c9306ab192059c58b8b529f1a7bdbdbc671d9a2c389b51b2539eaa15fb52ee44`, source `3f9653960e619baf5e26e8888df6bcb741479c98`, derives prepare bounds/enums from the supplied registered `appParts`. This is installed-definition alignment, not proof of a configured four-owner reset or complete-product recovery. |
+| Custom URI naming | Compatibility/migration decision remains open. Preserve current spelling; no new scheme is introduced or independently interoperability-qualified here. |
+| Native schema IDs | Native-owned compatibility decision remains open; this lane did not independently recheck native schema IDs. Registry documentation does not change them. |
+
+Exact checked module/definition hashes and the inspection limits are in
+[the Preview4 evidence index](preview4-evidence.json). Owner source/installed
+conformance receipts remain separate from live attack, account and deployment
+acceptance; no claim here is based on an exploit or live mutation.
 
 The six pending F18 decisions are not resolved here. No history, production stores,
 service ports, shared installed environment, package publication or deployment is
