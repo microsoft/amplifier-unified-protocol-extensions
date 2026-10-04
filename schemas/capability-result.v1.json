@@ -4,7 +4,8 @@
   "type": "object",
   "properties": {
     "accepted": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Whether the owner accepted this action. This is not proof of readiness, execution or completed effects. Recover terminal outcomes through the original owner receipt; accepted:false alone does not prove executed:false."
     },
     "updates": {
       "type": "array",

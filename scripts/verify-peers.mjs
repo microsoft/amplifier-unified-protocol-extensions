@@ -12,6 +12,7 @@ const options=Object.fromEntries(process.argv.slice(2).map(arg=>{
 for(const name of ['--ahp','--acp','--native'])if(!options[name])throw Error(`Required ${name}=<read-only-checkout>`);
 const peers={
   ahp:join(resolve(options['--ahp']),'schema/commands.schema.json'),
+  ahpActions:join(resolve(options['--ahp']),'schema/actions.schema.json'),
   acp:join(resolve(options['--acp']),'schema/v1/schema.json'),
   nativeRetired:join(resolve(options['--native']),'schemas/native-retired-copy.v1.json'),
   nativeManaged:join(resolve(options['--native']),'schemas/native-managed-files.v1.json'),

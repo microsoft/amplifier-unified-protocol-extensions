@@ -460,5 +460,46 @@
       "expectedPostResetRevision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
     },
     "valid": false
+  },
+  {
+    "name": "definite owner refusal remains a result with explicit no effect",
+    "schema": "capability-result.v1",
+    "value": {
+      "accepted": false,
+      "result": {
+        "executed": false,
+        "reason": "Feature is disabled for this installation"
+      },
+      "updates": []
+    },
+    "valid": true
+  },
+  {
+    "name": "accepted action may return downstream no admission",
+    "schema": "capability-result.v1",
+    "value": {
+      "accepted": true,
+      "result": {
+        "accepted": false,
+        "executed": false,
+        "reason": "Current turn is busy"
+      },
+      "updates": []
+    },
+    "valid": true
+  },
+  {
+    "name": "accepted asynchronous action may retain an unknown original job",
+    "schema": "capability-result.v1",
+    "value": {
+      "accepted": true,
+      "result": {
+        "commandId": "original-command",
+        "state": "unknown",
+        "replayed": false
+      },
+      "updates": []
+    },
+    "valid": true
   }
 ]

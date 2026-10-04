@@ -1,6 +1,6 @@
 {
   "name": "@amplifier/unified-protocol-extensions",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Negotiated capability contracts for Amplifier Unified AHP components",
   "type": "module",
   "license": "MIT",
