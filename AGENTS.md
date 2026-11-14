@@ -15,3 +15,5 @@ in the contract. Documentation-only edits need link/diff verification, not a
 runtime test rerun. Keep source, installed artifact, runtime, browser/device/account
 and deployed acceptance separate. Preserve sealed package receipts and identify
 documentation successors by their own source revision.
+
+This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
