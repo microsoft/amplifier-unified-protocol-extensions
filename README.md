@@ -45,6 +45,27 @@ After schema changes, run `npm run generate`, `npm run check:generated`, and
 `npm test`. `npm run verify:peers` separately checks the ordinary protocol examples
 against upstream schemas.
 
+
+<!-- ecosystem-map:start -->
+## Where this fits
+
+Shared definitions for optional AHP-carried capability messages used by hosts, providers and clients.
+
+Supports: Experience, Conversation, Tool, Connection.
+
+![Ecosystem roles and component relationships](docs/ecosystem-map.svg)
+
+[Open the map](docs/ecosystem-map.svg) · [Product page source (private)](docs/product/index.html) · [Map guide](https://github.com/microsoft/amplifier-constellation/blob/main/docs/ecosystem-maps.md)
+
+<details>
+<summary>The five shared building blocks</summary>
+
+[![Experience, Conversation, Agent Instance, Connection and Tool](https://raw.githubusercontent.com/microsoft/amplifier-constellation/main/site/assets/art/building-blocks.png)](https://microsoft.github.io/amplifier-constellation/)
+
+</details>
+
+<!-- ecosystem-map:end -->
+
 ## Contributing
 
 Most contributions require you to agree to a
