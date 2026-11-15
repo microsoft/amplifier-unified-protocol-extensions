@@ -1,72 +1,68 @@
-# Amplifier Unified protocol extensions
+# Amplifier Unified Protocol Extensions
 
-Start with [local vision](docs/VISION.md), [extension contract v1](docs/extensions.v1.md)
-and [repository contributor/agent entry](AGENTS.md). These link the approved family
-direction, ownership, consumer obligations, checks and remaining acceptance.
+JSON Schemas, wire examples, and TypeScript declarations for optional Unified
+capabilities carried over Agent Host Protocol (AHP). Use this package when building
+a host, capability provider, or client that needs to agree on those message shapes.
 
-A small public owner for the Amplifier Unified capability seams used with AHP0.9. Install the package or consume the shipped JSON Schemas directly;
-no client, host, model or native runtime is a dependency. Upstream schemas and
-reducers remain authoritative and are not copied here.
+It defines Unified-specific extensions, not the AHP or ACP protocols themselves.
+No host, client, model, or native runtime is required to use the schemas.
 
-`registry.json` names the extension namespaces, methods and schema versions.
-`schemas/` provides JSON Schema2020-12, `fixtures/` independent wire examples,
-and `types/` TypeScript declarations. `npm test` validates all fixtures plus
-rejection cases. The explicit `verify:peers` qualifier validates ordinary protocol objects using
-read-only upstream schemas; it is separate from `npm test`. See
-[conformance, owner checks and open findings](docs/conformance.md).
+## Get started
 
-## Capability topics
+From a checkout:
 
-AHP initialize advertises `_meta['amplifier.dev/capabilities']` only when installed.
-Each version1 topic names a URI. Standard `resourceRead` retrieves its JSON
-representation with an explicit `scope` query: an AHP session URI or `host`.
-`resourceWatch` invalidation is supported when `watch:true` is advertised.
-A topic may declare `scope:'host'`; clients then read/watch with `scope=host`
-and send actions on `ahp-root://`, regardless of their selected conversation.
-The default `scope:'context'` keeps the existing selected scope behavior. This
-field is part of the initial pre-release v1 contract, not an upstream AHP field.
-The provider must authorize both the topic and the scope. URI lookup never grants
-arbitrary filesystem access. A client opens only visible topics and may discard
-these derived caches on disconnect or at any time.
+```sh
+npm ci
+npm test
+```
 
-A record is `{topic,scope,revision,data}`. Its owner advances the safe integer
-revision after committing an authoritative mutation. Same scope plus same
-revision means the same representation. Owners define bounded fields and page
-large catalogs separately. Global session arrays, full conversation histories,
-private editor buffers, credentials and unrelated topic state are prohibited.
-Clients reject records that change the requested scope or publish unowned fields.
-No optional topics are loaded at client startup or while typing private drafts.
+Start with [registry.json](registry.json), which lists the extension namespaces,
+versions, and schemas. The [schema files](schemas/) are JSON Schema 2020-12;
+[fixtures](fixtures/) show accepted wire objects, and [types](types/) provides
+TypeScript declarations.
 
-Mutations use the negotiated `x-amplifier/capabilityAction` method, with topic,
-operation, version1, args, channel and a durable commandId. Admission records and
-payload identity precede external effects. An interrupted/unknown result is not
-permission to resend. A successful result includes only changed topic records,
-explicit invalidations and an optional action-specific result. Context comes
-from the authenticated connection and host session binding, never arbitrary
-clientId, workspace or native identity fields inside args. Native agent requests
-use the same authorized operation owner and receipt path as user actions.
+To add the package to another local project, install this checkout with
+`npm install /absolute/path/to/amplifier-unified-protocol-extensions`. Consumers can
+use its `registry.json` and `schemas/*` exports or import its declared types.
 
-Use standard AHP configuration, resources, tools, automation or other operations
-where their actual semantics fit. Legacy HTTP paths and UI action names are
-private client migration mappings, not new standard methods. Unknown extension
-versions/methods fail visibly; missing optional capabilities leave ordinary chat
-functional without a silent fallback to private host APIs.
+## Integration rules
 
-## Native ACP ownership
+Negotiate an optional capability before using it. A valid message shape is not
+permission to perform an action: the provider must authenticate and authorize its
+scope. Keep normal AHP operations for behavior they already describe, and keep
+unknown outcomes visible rather than automatically resending actions.
 
-The independent `microsoft/amplifier-app-acp` repository owns native ACP extension
-schemas and fixtures, including `_amplifier/native`, `_amplifier/history` and the
-negotiated host callback. Those contracts can be used without Amplifier Unified.
-This repository owns only the product-specific capability representations and
-operations. Standard AHP client-provided tools and bidirectional resource access
-serve targeted client interaction; local drafts and editing state are not mirrored.
+Native Amplifier ACP extensions belong to
+[amplifier-app-acp](https://github.com/microsoft/amplifier-app-acp).
 
-## Generated bindings and product recovery
+## Reference and development
 
-Run `npm run generate` after schema changes; `npm run check:generated` and the
-consumer type test detect drift. Existing generic interfaces remain available.
-The additive `recovery-app-reset-*.v1.json` schemas describe current product
-argument shapes only. Exact negotiated actions/parts and runtime review, account,
-receipt and maintenance authority remain with the recovery owner. Native ACP
-managed-file, retired-copy, cache and reset schemas remain at their public owner
-referenced by `registry.json`.
+- [Extension contract](docs/extensions.v1.md)
+- [Conformance checks](docs/conformance.md)
+- [Registry](registry.json)
+
+After schema changes, run `npm run generate`, `npm run check:generated`, and
+`npm test`. `npm run verify:peers` separately checks the ordinary protocol examples
+against upstream schemas.
+
+## Contributing
+
+Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit [Contributor License Agreements](https://cla.opensource.microsoft.com).
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
