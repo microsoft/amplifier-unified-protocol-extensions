@@ -1,25 +1,25 @@
 {
   "citations": [
     {
-      "git_blob": "ed3e6803bbd6e5018840fc27792c83a51a835fa1",
+      "git_blob": "a8180b063ddebb4584381812ac95decbb1c58823",
       "path": "README.md",
-      "ref": "2d6083be00ee0ecdfc73d362890a5d6e60efc1b9",
-      "sha256": "a8ba038c0795eb726a8753d28567ebdaa552488b12db5766ad4caa93a3dbc8f6",
-      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/2d6083be00ee0ecdfc73d362890a5d6e60efc1b9/README.md"
+      "ref": "b22c1aa3506b4c580359cb749f0c098264639eea",
+      "sha256": "c456c50e8609a29bf55eb551d1db4169a707cde815ce3d9980840b1ec954055f",
+      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/b22c1aa3506b4c580359cb749f0c098264639eea/README.md"
     },
     {
       "git_blob": "83d9e90bd15cc341252083cb50e269cb29e4e1b2",
       "path": "docs/extensions.v1.md",
-      "ref": "2d6083be00ee0ecdfc73d362890a5d6e60efc1b9",
+      "ref": "b22c1aa3506b4c580359cb749f0c098264639eea",
       "sha256": "7852ade3971109e89ea1f7ff4e6e90e6c13080621bd58ff4266f6dcc90185552",
-      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/2d6083be00ee0ecdfc73d362890a5d6e60efc1b9/docs/extensions.v1.md"
+      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/b22c1aa3506b4c580359cb749f0c098264639eea/docs/extensions.v1.md"
     },
     {
       "git_blob": "53b71441390d4588810d210d4b816b12301d8035",
       "path": "registry.json",
-      "ref": "2d6083be00ee0ecdfc73d362890a5d6e60efc1b9",
+      "ref": "b22c1aa3506b4c580359cb749f0c098264639eea",
       "sha256": "58db321635e65cb032d48482ef3de8de9b966274f292a37eca8f1bc339213e11",
-      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/2d6083be00ee0ecdfc73d362890a5d6e60efc1b9/registry.json"
+      "url": "https://github.com/microsoft/amplifier-unified-protocol-extensions/blob/b22c1aa3506b4c580359cb749f0c098264639eea/registry.json"
     }
   ],
   "consumer_cta": {
@@ -94,7 +94,7 @@
     "No runtime service, model or client installation is required to use schemas."
   ],
   "purpose": "Share schemas and examples for optional Unified capabilities carried over AHP.",
-  "ref": "2d6083be00ee0ecdfc73d362890a5d6e60efc1b9",
+  "ref": "b22c1aa3506b4c580359cb749f0c098264639eea",
   "repository": "microsoft/amplifier-unified-protocol-extensions",
   "roles": [],
   "scope": "cross-cutting interface definitions",
@@ -110,5 +110,5 @@
     "Tool",
     "Connection"
   ],
-  "visibility": "private"
+  "visibility": "public"
 }
